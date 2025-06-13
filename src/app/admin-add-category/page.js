@@ -20,9 +20,8 @@ const AddCategoryPage = () => {
             const newCategory = {
                 ...category
             }
-           
             console.log(newCategory);
-            fetch('http://localhost:4200/category', {
+            fetch('http://localhost:5000/categories', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -30,7 +29,7 @@ const AddCategoryPage = () => {
                 body: JSON.stringify(newCategory)
             }).then((response) => response.json())
                 .then((json) => console.log(json));
-                window.location.href = '/categories-list';
+                window.location.href = '/admin-categories-list';
         }
     }
 
@@ -42,7 +41,7 @@ const AddCategoryPage = () => {
             </div>
 
             <button type="submit" className="btn btn-primary me-2" >Add Category</button>
-            {/* <a href="/categories-list" className="btn btn-primary" >View Categories</a> */}
+            {/* <a href="/admin-categories-list" className="btn btn-primary" >View Categories</a> */}
         </form>
     </div>);
 }

@@ -12,7 +12,7 @@ const AdminUpdateCategoryPage = () => {
      useEffect(() => {
         if (!id) return;
 
-        fetch(`http://localhost:4200/category/${id}`)
+        fetch(`http://localhost:5000/categories/${id}`)
             .then((response) => response.json())
             .then((data) => {
                 console.log("API Response", data);
@@ -39,7 +39,7 @@ const AdminUpdateCategoryPage = () => {
             }
 
             console.log(updatedCategory);
-            fetch(`http://localhost:4200/category/${id}`, {
+            fetch(`http://localhost:5000/categories/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -47,7 +47,7 @@ const AdminUpdateCategoryPage = () => {
                 body: JSON.stringify(updatedCategory)
             }).then((response) => response.json())
                 .then((json) => console.log(json));
-            window.location.href = '/categories-list';      
+            window.location.href = '/admin-categories-list';      
         }
     }
 
@@ -59,7 +59,7 @@ const AdminUpdateCategoryPage = () => {
             </div>
 
             <button type="submit" className="btn btn-primary me-2" >Update Category</button>
-            {/* <a href="/categories-list" className="btn btn-primary" >View Categories</a> */}
+            {/* <a href="/admin-categories-list" className="btn btn-primary" >View Categories</a> */}
         </form>
     </div>);
     

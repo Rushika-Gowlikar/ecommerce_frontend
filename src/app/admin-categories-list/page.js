@@ -17,7 +17,7 @@ const CategoriesListPage = () => {
   const fetchCategories = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:4200/categories');
+      const response = await fetch('http://localhost:5000/categories');
       setNotFound(false);
       if (!response.ok && response.status == 400) {
 
@@ -39,7 +39,7 @@ const CategoriesListPage = () => {
   const handleDelete = async (categoryId) => {
     if (window.confirm('Are you sure you want to delete this category?')) {
       try {
-        const response = await fetch(`http://localhost:4200/category/${categoryId}`, {
+        const response = await fetch(`http://localhost:5000/categories/${categoryId}`, {
           method: 'DELETE',
         });
         

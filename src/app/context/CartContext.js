@@ -1,18 +1,17 @@
-
 'use client';
+import { createContext, useReducer, useContext } from "react";
+import { cartReducer, initialState } from "./cartReducer";
 
-import { createContext, useContext, useState } from 'react';
+export const CartCountContext = createContext();
 
-const CartContext = createContext();
-
-export const CartProvider = ({ children }) => {
-  const [cartCount, setCartCount] = useState(0);
+export const CartCountProvider = ({ children }) => {
+  const [cartState, dispatch] = useReducer(cartReducer, initialState);
 
   return (
-    <CartContext.Provider value={{ cartCount, setCartCount }}>
+    <CartCountContext.Provider value={{ cartState, dispatch }}>
       {children}
-    </CartContext.Provider>
+    </CartCountContext.Provider>
   );
 };
 
-export const useCart = () => useContext(CartContext);
+

@@ -49,8 +49,8 @@ const AdminHeader = (props) => {
       <div className="card-body">
         <h5 className="card-title">Products</h5>
         <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-         <a href="#" className="btn btn-secondary me-2">Add Product</a>
-        <a href="#" className="btn btn-secondary">View Active Products</a>
+         <a href="/admin-add-product" className="btn btn-primary me-2">Add Product</a>
+        <a href="/admin-products-list" className="btn btn-primary">View Active Products</a>
       </div>
     </div>
   </div>
@@ -60,7 +60,7 @@ const AdminHeader = (props) => {
         <h5 className="card-title">Categories</h5>
         <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
          <a href="/admin-add-category" className="btn btn-primary me-2" >Add Categories</a>
-        <a href="/categories-list" className="btn btn-primary">View Active Categories</a>
+        <a href="/admin-categories-list" className="btn btn-primary">View Active Categories</a>
       </div>
     </div>
   </div>
